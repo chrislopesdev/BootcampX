@@ -8,7 +8,6 @@ CREATE TABLE cohorts (
 CREATE TABLE students (
   id SERIAL PRIMARY KEY NOT NULL,
   name VARCHAR(255) NOT NULL,
-  age INT,
   email VARCHAR(255),
   phone VARCHAR(32),
   github VARCHAR(255),
