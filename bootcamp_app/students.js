@@ -8,24 +8,11 @@ const pool = new Pool({
   port: '5432',
 });
 
-// shows connection to database
 pool.connect().then(() => {
   console.log('We have connected to the database.');
 }).catch((err) => {
   console.log('Error: ', err);
 });
-
-// pool.query is a function that accepts an SQL query as a JavaScript string
-// pool.query(`
-// SELECT students.id, students.name AS student, cohorts.name AS cohort
-// FROM students
-// JOIN cohorts ON cohorts.id = cohort_id
-// LIMIT 5;
-// `)
-//   .then((res) => {
-//     console.log(res.rows); // returns a array of javascript object
-//   })
-//   .catch((err) => console.error('query error', err.stack));
 
 pool.query(`
 SELECT students.id as student_id, students.name as name, cohorts.name as cohort
